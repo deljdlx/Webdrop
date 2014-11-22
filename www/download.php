@@ -5,6 +5,10 @@
 
 $fileId=preg_replace('`\W`', '', $_GET['fileId']);
 
+if(!is_dir(realpath(__DIR__.'/../uploaded'))) {
+	mkdir(realpath(__DIR__.'/../uploaded'));
+}
+
 $filepath=realpath(__DIR__.'/../uploaded').'/'.$fileId;
 
 
