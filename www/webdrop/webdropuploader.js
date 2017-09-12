@@ -23,11 +23,14 @@ function WebDropFileUpload(client, file, clientId) {
 			userId:self.clientId
 		});
 	}, true);
-	this.send();
+	
+	//this.send();
 }
 
 
 WebDropFileUpload.prototype.send=function() {
+
+	console.debug('send');
 
 	var self=this;
 

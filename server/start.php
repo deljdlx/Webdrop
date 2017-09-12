@@ -13,6 +13,9 @@ error_reporting(E_ALL);
 
 
 chdir(__DIR__.'/../');
+if(!is_dir('uploaded')) {
+	mkdir('uploaded');
+}
 
 
 require('library/wrench/lib/SplClassLoader.php');

@@ -31,19 +31,21 @@ WebDropUser.prototype.dragOver=function(e) {
 }
 
 WebDropUser.prototype.drop=function(e) {
+	
 	e.stopPropagation();
 	e.preventDefault();
 	var dt = e.dataTransfer;
 	var files = dt.files;
-
 	this.manager.sendFiles(files);
 }
 
 
 WebDropUser.prototype.sendFiles=function(files) {
 	for (var i = 0; i < files.length; i++) {
+		console.debug('call send');
 		var uploader=new WebDropFileUpload(this.client, files[i], this.id);
 		uploader.send();
+		
 	}
 }
 
